@@ -1,6 +1,6 @@
-using NHM4CP
+using HNM4CP
 using Test
 
-@testset "NHM4CP.jl" begin
+@testset "HNM4CP.jl" begin
     # Write your tests here.
 end

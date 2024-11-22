@@ -3,4 +3,5 @@ using Test
 
 @testset "HNM4CP.jl" begin
     # Write your tests here.
+    include("nm_Test_lcprand.jl")
 end

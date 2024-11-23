@@ -1,5 +1,7 @@
 # HNM4CP
-![image info](./work-in-progress.png =100x20)
+![image info](./work-in-progress.png)
+
+<img src="./work-in-progress.png" width=250 height=200>
 
 [![Build Status](https://github.com/vepiteski/HNM4CP.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/vepiteski/HNM4CP.jl/actions/workflows/CI.yml?query=branch%3Amain)
 

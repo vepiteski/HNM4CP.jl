@@ -58,7 +58,8 @@ For example, copy any test, say `nm_Test_Fathi.jl` in a fresh folder. Start Juli
 
     * In the julia REPL, type in `using Test`.
 
-    * Then, again in the Julia REPL, typein `include("nm_Test_Fathi.jl")`, which should perform as expected.
+    * Then, again in the Julia REPL, typein `include("nm_Test_Fathi.jl")`, which should perform 
+    as expected.
 
 You are now in position to modify the nm_Test_Fathi.jl script.
 

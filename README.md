@@ -2,6 +2,8 @@
 
 <img src="./20883624.jpeg" width=250 height=200>
 
+<a href="https://www.freepik.com/icons/work-in-progress">Icon by Freepik</a>
+
 [![Build Status](https://github.com/vepiteski/HNM4CP.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/vepiteski/HNM4CP.jl/actions/workflows/CI.yml?query=branch%3Amain)
 
 In construction. Will provide a Hybrid Newton-Min solver for complementarity problems. Next step, provide the solver for LCPs.

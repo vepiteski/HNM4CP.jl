@@ -1,3 +1,5 @@
+export Fathi
+
 function Fathi(n :: Int = 20; T = Float64)
 
     MA=2.0*ones(T, n,n)

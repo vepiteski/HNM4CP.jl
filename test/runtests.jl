@@ -7,11 +7,11 @@ using Test
     println("------------------")
     include("nm_Test_Murty.jl")
 
-    println("Test on fathi")
+    println("\n\n\n Test on fathi")
     println("------------------")
     include("nm_Test_Fathi.jl")
 
-    println("Test on lcprand")
+    println("\n\n\n Test on lcprand")
     println("------------------")
     include("nm_Test_lcprand.jl")
 end

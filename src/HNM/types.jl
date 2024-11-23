@@ -75,7 +75,7 @@ F(m::LCPModel,      x::AbstractVector)   = F(x,y(m,x))
 function Θ(x::AbstractVector{T},y::AbstractVector{T}) where T
     return T(0.5) * F(x,y)⋅F(x,y)
 end
-#Θ(x::AbstractVector,y::AbstractVector)   = (0.5) * F(x,y)⋅F(x,y)
+
 Θ(m::LCPModel,      x::AbstractVector)   = Θ(x,y(m,x))
 
 export F, Θ, y, y!

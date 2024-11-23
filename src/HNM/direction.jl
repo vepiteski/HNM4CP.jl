@@ -20,7 +20,8 @@ function direction(m :: LCPModel{T},
     # Choice: put all E⁺ in A for now
     Î = I₀
 
-    # useless if-then-else but compensates for inneficient set operations 
+    # useless if-then-else but compensates for inneficient set operations
+    # in Julia
 
     if isempty(E⁺) A = A₀   else   A = A₀ ∪ E⁺   end
     #

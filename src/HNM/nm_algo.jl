@@ -109,14 +109,7 @@ function nm_algo(m :: LCPModel{T};
                                 QP ? "true" : "false", sizeQP)
         
         x, Θₓ, yx = x⁺, Θ⁺, yx⁺
-
-        # pour debug...
-        #@assert isapprox(yx, y(m,x))
-        #yx = y(m, x)
-        #Θₓ = Θ(m, x)
-        #
-        
-        
+       
         solved = (Θₓ <= tol)
                 
         niter += 1

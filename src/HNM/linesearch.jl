@@ -70,10 +70,6 @@ function linesearch!(m :: LCPModel{T},
     # test to go at least as far as the first kink
     if (kinkStep == :first)
         if (t < t_min) & ( Θ₀  >=  Θ(x+t_min*d, yx+t_min*Md) - Θ′d*t_min*τ₀ )
-        #if Θ₀>Θ(x+t_min*d, yx+t_min*Md) 
-        #if Θp>Θ(x+t_min*d, yx+t_min*Md) 
-            #@show Θ₀, Θp, Θ(x+t_min*d, yx+t_min*Md)
-            #@show t, t_min
             t = t_min
             xp = x + t*d
             nbtval += 1

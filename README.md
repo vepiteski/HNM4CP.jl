@@ -10,6 +10,10 @@ This package will provide a basket of tools to deal with Complementarity Problem
 
 	0 <= x _|_ M*x + q >= 0
 
+	$0\le x \perp Mx+q \ge 0$
+
+$$0\le x \perp Mx+q \ge 0$$
+
 **Abstract data type**
 
 The complementarity problems are encapsulated in a data type. For the moment, only standard LCP is available in the file src/HNM

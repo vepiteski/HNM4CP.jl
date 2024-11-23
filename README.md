@@ -8,10 +8,6 @@
 
 This package will provide a basket of tools to deal with Complementarity Problems. Now, it is limited to Linear Complementarity Problems in the so called standard form
 
-	0 <= x _|_ M*x + q >= 0
-
-	$0\le x \perp Mx+q \ge 0$
-
 $$0\le x \perp Mx+q \ge 0$$
 
 **Abstract data type**

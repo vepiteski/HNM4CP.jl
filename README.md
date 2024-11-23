@@ -19,7 +19,13 @@ This should install the package. Still in the Pkg subshell, type in
 
 this should trigger tests, hopefully successful.
 
-Then, inspect the folder Test to imitate the test scripts to use the HNM solver. For example, copy any test, say "nm_Test_Fathi.jl" in a fresh folder. Start Julia in this folder. Type in "using Test" required within the script. Then, in the Julia REPL, typein include("nm_Test_Fathi.jl"), which should perform as expected. You are now in position to modify the nm_Test_Fathi.jl script.
+Then, inspect the folder Test to imitate the test scripts to use the HNM solver.
+
+For example, copy any test, say "nm_Test_Fathi.jl" in a fresh folder. Start Julia in this folder.
+-In the julia REPL, type in "using Test".
+-Then, in the Julia REPL, typein include("nm_Test_Fathi.jl"), which should perform as expected.
+
+You are now in position to modify the nm_Test_Fathi.jl script.
 
 
 

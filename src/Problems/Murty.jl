@@ -1,3 +1,5 @@
+export Murty
+
 function Murty(n :: Int = 20;
                variant :: Symbol = :Z, T = Float64)
 

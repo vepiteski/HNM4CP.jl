@@ -8,13 +8,15 @@ First test incorporated.
 
 For now, no easy way to use this package.
 
-In the REPL, type
-      "]" to enter the Package manager subshell.
-Then, type
+In the REPL, type  "]"  to enter the Package manager subshell.
+Then, type in
+
       dev https://github.com/vepiteski/HNM4CP.jl
 
 This should install the package. Still in the Pkg subshell, type in
+
       test HNM4CP
+
 this should trigger tests, hopefully successful.
 
 Then, inspect the folder Test to imitate the test scripts to use the HNM solver.

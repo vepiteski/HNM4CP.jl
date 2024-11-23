@@ -1,5 +1,4 @@
 # HNM4CP
-![image info](./work-in-progress.png)
 
 <img src="./work-in-progress.png" width=250 height=200>
 

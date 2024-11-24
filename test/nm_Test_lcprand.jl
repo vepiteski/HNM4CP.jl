@@ -43,13 +43,12 @@ m=m0
 
 
 label = "HPNM"
-eps_test = 1.0e-7
-@printf("Variant           niter   time  #M*vector Θ(m,xsol) |A₀| |I₀| |E⁺| |E⁻|     #E  #QP   MoyQP   #tval  max|E⁻|  \n")
+@printf("Variant    niter   time  #M*vector Θ(m,xsol) |A₀| |I₀| |E⁺| |E⁻|    #E  #QP   MoyQP   #tval  max|E⁻|  \n")
 
 exectime = time()
 xsol, A₀, I₀, E⁺, E⁻, niter, nbE, nbQP, nbtval, maxE, sQP, mQP  = nm_algo(m)
 exectime = time() - exectime
 
-@printf("%5s %6.1e     %5i   %5.2f  %8i %9.2e  %3i  %3i  %3i  %3i    %3i  %3i  %6.1f  %5i  %3i\n",
-        label, eps_test,niter, exectime, m.nf, Θ(m,xsol),length(A₀),length(I₀),length(E⁺),length(E⁻), nbE, nbQP, mQP, nbtval, maxE )
+@printf("%5s     %5i   %5.2f  %8i %9.2e  %3i  %3i  %3i  %3i    %3i  %3i  %6.1f  %5i  %3i\n",
+        label,niter, exectime, m.nf, Θ(m,xsol),length(A₀),length(I₀),length(E⁺),length(E⁻), nbE, nbQP, mQP, nbtval, maxE )
 

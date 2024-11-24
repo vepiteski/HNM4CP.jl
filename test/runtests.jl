@@ -2,7 +2,14 @@ using HNM4CP
 using Test
 
 @testset "HNM4CP.jl" begin
-    # Write your tests here.
+    println("Test on bg2012")
+    println("------------------")
+    include("nm_Test_bg2012.jl")
+
+    println("Test on Csizmadia")
+    println("------------------")
+    include("nm_Test_Csizmadia.jl")
+
     println("Test on Murty")
     println("------------------")
     include("nm_Test_Murty.jl")

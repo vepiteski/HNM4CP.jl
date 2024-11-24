@@ -13,13 +13,6 @@ using BandedMatrices
 include("HNM/types.jl")
 include("HNM/nm_algo.jl")
 
-include("Problems/lcprand.jl")
-include("Problems/Fathi.jl")
-include("Problems/Murty.jl")
-include("Problems/csizmadia.jl")
-include("Problems/bg2012.jl")
-
-export lcprandom
 
 include("Utilities/splitSetsMod.jl")
 include("Utilities/ispmat.jl")

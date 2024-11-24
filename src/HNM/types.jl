@@ -78,4 +78,4 @@ end
 
 Θ(m::LCPModel,      x::AbstractVector)   = Θ(x,y(m,x))
 
-export F, Θ, y, y!
+export AbstractCPModel, LCPModel, F, Θ, y, y!, nM, Mtimesv!, Mtimesv, reset!

@@ -13,10 +13,7 @@ $$0\le x \perp Mx+q \ge 0$$
 **Abstract data type**
 
 
-The complementarity problems are encapsulated in a data type. For the moment, the only concrete type is for standard LCP, available in the file 
-```
-src/HNM/types.jl
-```
+The complementarity problems are encapsulated in a data type. For the moment, the only concrete type is for standard LCP, available in the file ```src/HNM/types.jl```
 
 **PNM and HNM solvers**
 

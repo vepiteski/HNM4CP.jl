@@ -17,7 +17,7 @@ The complementarity problems are encapsulated in a data type. For the moment, th
 
 **PNM and HNM solvers**
 
-The solvers implement the algorithms in DFG2024 https://hal.science/hal-02306526 . It is a Newton-min algorithm made globally convergent using Polyhedral projections. The HNM (hybrid) version uses tests to avoid as much as possible the polyhedral computations for the sake of efficiency, while maintaining the global convergence property.
+The solvers implement the algorithms in DFG2024 https://hal.science/hal-02306526 . PNM is a Newton-min algorithm made globally convergent using Polyhedral projections. The hybrid HNM version uses tests to avoid as much as possible the polyhedral computations for the sake of efficiency, while maintaining the global convergence property.
 
 **Examples of complementarity problems**
 

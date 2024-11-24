@@ -20,7 +20,7 @@ function nm_algo(m :: LCPModel{T};
                  τ = T(1.0e-7),      # Tolerance for E⁻
                  #τ :: AbstractFloat = T(1.0e-7),      # Tolerance for E⁻
                  τ₀:: AbstractFloat = T(0.01),        # Armijo descent parameter
-                 eps_active  = T(1.0e-9),
+                 eps_active  = T(1.0e-7),
                  EinI :: Bool = false) where T
     # Newton min general algorithm
 

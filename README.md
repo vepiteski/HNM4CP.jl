@@ -1,7 +1,7 @@
 # HNM4CP
 
 <p align="center">
-<img src="./work-progress_5578703.png" width=250 height=200>
+<img src="./work-progress_5578703.png" width=200 height=200>
 </p>
 
 <a href="https://www.freepik.com/icons/work-in-progress">Icon by Freepik</a>

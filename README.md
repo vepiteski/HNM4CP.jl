@@ -41,10 +41,6 @@ Then, type in
 
       add https://github.com/vepiteski/HNM4CP.jl
 
-or if you intend to modify and contribute,
-
-      dev https://github.com/vepiteski/HNM4CP.jl
-
 The package was built using Julia 1.11.1 but hopefully will work using other (recent) versions.
 
 Still in the Pkg subshell, type in

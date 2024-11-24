@@ -23,7 +23,7 @@ The solvers implement the algorithms in DFG2024 https://hal.science/hal-02306526
 
 **Examples of complementarity problems**
 
-In src/Problems we provide a collection of random generator and problems from applications which are used to test the solvers.
+In ```src/Problems``` we provide a collection of random generator and problems from applications which are used to test the solvers.
 
 **Interfaces to other solvers**
 

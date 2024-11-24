@@ -15,7 +15,7 @@ $$0\le x \perp Mx+q \ge 0$$
 **Abstract data type**
 
 
-The complementarity problems are encapsulated in a data type, all complying to ``` AbstractCPModel`{T}``. For the moment, the only concrete type is for standard LCP, ```LCPModel{T} <: AbstractCPModel{T}``` available in the file ```src/HNM/types.jl```. The T refers to floating point precision which may be selected as Float32, Float64, Float128, BigFloat, Double64 or even other future complying float representations.
+The complementarity problems are encapsulated in a data type, all complying to ``` AbstractCPModel{T}```. For the moment, the only concrete type is for standard LCP, ```LCPModel{T} <: AbstractCPModel{T}``` available in the file ```src/HNM/types.jl```. The T refers to floating point precision which may be selected as Float32, Float64, Float128, BigFloat, Double64 or even other future complying float representations.
 
 **PNM and HNM solvers**
 

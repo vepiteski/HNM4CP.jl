@@ -8,9 +8,11 @@
 
 [![Build Status](https://github.com/vepiteski/HNM4CP.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/vepiteski/HNM4CP.jl/actions/workflows/CI.yml?query=branch%3Amain)
 
-This package will provide a basket of tools to deal with Complementarity Problems. Now, it is limited to Linear Complementarity Problems in the so called standard form
+This package will provide a basket of tools to deal with Complementarity Problems. Now, it is limited to Linear Complementarity Problems in the so called standard form,
 
-$$0\le x \perp Mx+q \ge 0$$
+$$0\le x \perp (Mx+q) \ge 0.$$
+
+
 
 **Abstract data type**
 

@@ -53,7 +53,7 @@ this will trigger tests, hopefully successful.
 
 **Example usage**
 
-Inspect the folder test to imitate the test scripts to use the HNM solver.
+Inspect the folder ```test``` to imitate the test scripts to use the HNM solver.
 
 For example, copy any test, say `nm_Test_Fathi.jl` in a fresh folder. Start Julia in this folder.
 

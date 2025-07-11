@@ -43,13 +43,15 @@ Then, type in
 
       add https://github.com/vepiteski/HNM4CP.jl
 
-The package was built using Julia 1.11.1 but hopefully will work using other (recent) versions.
+The package was built using Julia 1.11.6 but hopefully will work using other (recent) versions.
 
 Still in the Pkg subshell, type in
 
       test HNM4CP
 
 this will trigger tests, hopefully successful.
+
+To quit the Pkg subshell, type < backspace > which returns in the main Julia shell.
 
 ***Example usage***
 

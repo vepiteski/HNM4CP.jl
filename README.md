@@ -57,8 +57,10 @@ this will trigger tests, hopefully successful.
 
 Let a LCP be defined by
 ```
-M = [0.11  22.5 ;-0.85   2.5]
-q = [-45.6;-2]
+M = [ 0.11  22.5 ;
+     -0.85   2.5 ]
+q = [-45.6;
+     -2   ]
 ```
 The solver receives a problem produced using the function 
 ```
@@ -66,7 +68,8 @@ m = LCPModel(M,q)
 ```
 or, if specifying an initial point is desired,
 ```
-x = [-0.2; 2.02]
+x = [-0.2; 
+      2.019]
 m = LCPModel(M,q,x₀=x)
 ```
 

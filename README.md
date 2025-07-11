@@ -66,6 +66,7 @@ m = LCPModel(M,q)
 ```
 or, if specifying an initial point is desired,
 ```
+x=[-0.2; 2.019]
 m = LCPModel(M,q,x₀=x)
 ```
 
@@ -106,16 +107,13 @@ Newton min variants algorithm.
  eps_active:                      1.0e-9 Float64
  absolute stopping tolerance:     2.220446049250313e-16 Float64
 
-
 Niter   Θ         |A₀| |I₀|  |E⁺| |E⁻|   stepsize   QP       dimQP
-    0   2.12e+00    2    0    0    0  
-    1   2.06e+00    2    0    0    0    1.5625e-02  false     0
-    2   1.15e-01    1    1    0    0    7.8125e-03  false     0
+    0   2.06e+00    2    0    0    0  
+    1   2.06e+00    2    0    0    0    9.7656e-04  false     0
+    2   1.12e-01    1    1    0    0    7.8125e-03  false     0
     3   0.00e+00    0    2    0    0    1.0000e+00  false     0
 Solved! 
     3   0.00e+00    0    2    0    0   
-
-
 ```
 
 

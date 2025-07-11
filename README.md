@@ -51,7 +51,7 @@ Still in the Pkg subshell, type in
 
 this will trigger tests, hopefully successful.
 
-**Example usage**
+***Example usage***
 
 **A simple example**
 

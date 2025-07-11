@@ -93,10 +93,10 @@ function nm_algo(m :: LCPModel{T};
                                                      valΘ, niter, kinkStep = kink,
                                                      N = N, τ₀ = τ₀, verbose = verbose > 2)
 
-            (verbose >2) && @printf("Niter   Θ         |A₀| |I₀|  |E⁺| |E⁻|   stepsize   QP       dimQP\n")  
-            (verbose >1) && @printf("%5i  %9.2e  %3i  %3i  %3i  %3i   %11.4e  %s  %4i\n",
-                                    niter,Θₓ,length(A₀),length(I₀),length(E⁺),length(E⁻),t,
-                                    QP ? "true" : "false", sizeQP)
+            #(verbose >2) && @printf("Niter   Θ         |A₀| |I₀|  |E⁺| |E⁻|   stepsize   QP       dimQP\n")  
+            #(verbose >1) && @printf("%5i  %9.2e  %3i  %3i  %3i  %3i   %11.4e  %s  %4i\n",
+            #                        niter,Θₓ,length(A₀),length(I₀),length(E⁺),length(E⁻),t,
+            #                        QP ? "true" : "false", sizeQP)
             
             nbtval += tval
             yx⁺ = yx + t*Md

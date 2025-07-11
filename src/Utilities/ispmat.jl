@@ -1,4 +1,4 @@
-using Base.Iterators
+using IterTools
 
 function ispmat(M)
     nc,nr = size(M)

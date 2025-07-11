@@ -66,14 +66,14 @@ m = LCPModel(M,q)
 ```
 or, if specifying an initial point is desired,
 ```
-x=[-0.2; 2.019]
+x = [-0.2; 2.02]
 m = LCPModel(M,q,x₀=x)
 ```
 
 The simplest application consists in calling 
 ```
 julia> nm_algo(m)
-([3.556701030927834, 2.0092783505154634], Int64[], [1, 2], Int64[], Int64[], 3, 0, 0, 0, 0, 0, 0)
+([3.556701030927835, 2.009278350515464], Int64[], [1, 2], Int64[], Int64[], 3, 0, 0, 0, 0, 0, 0)
 ```
 A more useful call will allow to interpret the result:
 ```
@@ -81,8 +81,8 @@ julia> xsol, A₀, I₀, E⁺, E⁻, niter, nbE, nbQP, nbtval, maxE, sQP, mQP  =
 
 julia> xsol
 2-element Vector{Float64}:
- 3.556701030927834
- 2.0092783505154634
+ 3.556701030927835
+ 2.009278350515464
 ```
 which yields the solution point.
 
@@ -109,8 +109,8 @@ Newton min variants algorithm.
 
 Niter   Θ         |A₀| |I₀|  |E⁺| |E⁻|   stepsize   QP       dimQP
     0   2.06e+00    2    0    0    0  
-    1   2.06e+00    2    0    0    0    9.7656e-04  false     0
-    2   1.12e-01    1    1    0    0    7.8125e-03  false     0
+    1   2.06e+00    2    0    0    0    1.2207e-04  false     0
+    2   1.09e-01    1    1    0    0    7.8125e-03  false     0
     3   0.00e+00    0    2    0    0    1.0000e+00  false     0
 Solved! 
     3   0.00e+00    0    2    0    0   

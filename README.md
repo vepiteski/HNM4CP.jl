@@ -29,7 +29,7 @@ In ```test/Problems``` we provide a collection of random generator and problems 
 
 **Interfaces to other solvers**
 
-We also provide interfaces to compare HNM to other available solvers.
+We will also provide soon interfaces to compare HNM to other available solvers.
 
 ------------------------------
 

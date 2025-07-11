@@ -38,14 +38,18 @@ function linesearch!(m :: LCPModel{T},
 
     # Uncomment for systematic unit stepsize
     #return xp, Θp, t, 1, nbktr, true
-
+    verbose && @printf("         Θ(x⁺)        t        Θ′d*t*τ₀ \n")
+    verbose && @printf("      %9.2e   %9.2e   %9.2e\n", Θp, t, Θ′d*t*τ₀)
+    
     while  ((Θp - Θ₀) >  Θ′d*t*τ₀) && (nbktr<bktrmax)
         t *= fact
         xp = x + t*d
         yp = yx + t*Md
         Θp = Θ(xp, yp)
         
-        verbose && println("         Θ(xp) = ", Θp, "  t = ",t, " Θ0 = ",Θ₀, "Θ′d*t*τ₀ = ",Θ′d*t*τ₀)
+        #verbose && println("         Θ(xp) = ", Θp, "  t = ",t, " Θ0 = ",Θ₀, "Θ′d*t*τ₀ = ",Θ′d*t*τ₀)
+        
+        verbose && @printf("      %9.2e   %9.2e   %9.2e\n", Θp, t, Θ′d*t*τ₀)
         nbktr += 1
     end
 
@@ -98,7 +102,7 @@ function linesearch!(m :: LCPModel{T},
 
     yp = yx + t*Md
     θp = Θ(xp, yp)
-    verbose && println(" At end: Θ(xp) = ", Θp, "  t = ",t, " Θ0 = ",Θ₀, "Θ′d*t*τ₀ = ",Θ′d*t*τ₀)
+    verbose && println(" At end: Θ(x⁺) = ", Θp, "  t = ", t )
 
     return xp, Θp, t, nbtval, nbktr, true
 end

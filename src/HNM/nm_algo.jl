@@ -53,11 +53,15 @@ function nm_algo(m :: LCPModel{T};
     nbtval = 0  # number of iterations where the Armijo step is replaced by
                 # the first or best kink
     maxE = 0    # the maximum size |E| encountered
-    (verbose >1) && @printf("Niter   Θ         |A₀| |I₀|  |E⁺| |E⁻|   stepsize   QP       dimQP\n")  
 
     valΘ = T(-Inf) * ones(T,N)
     yx = y(m, x)
     Θₓ = Θ(x, yx)
+
+    (verbose >1) && @printf("Niter   Θ         |A₀| |I₀|  |E⁺| |E⁻|   stepsize   QP       dimQP\n")  
+    E, I₀, A₀, E⁻,E⁺ = splitsets(m, x, T(τ), yx = yx, eps_active = eps_active)
+    (verbose >1) && @printf("%5i  %9.2e  %3i  %3i  %3i  %3i  \n",
+                                niter,Θₓ,length(A₀),length(I₀),length(E⁺),length(E⁻))
     # Julia nonsense
     Θ⁺ = Θₓ
     yx⁺ = yx
@@ -103,16 +107,17 @@ function nm_algo(m :: LCPModel{T};
             yx⁺ = y(m,x⁺)
         end
 
+        niter += 1
+        x, Θₓ, yx = x⁺, Θ⁺, yx⁺
+
         (verbose >2) && @printf("Niter   Θ         |A₀| |I₀|  |E⁺| |E⁻|   stepsize   QP       dimQP\n")  
         (verbose >1) && @printf("%5i  %9.2e  %3i  %3i  %3i  %3i   %11.4e  %s  %4i\n",
                                 niter,Θₓ,length(A₀),length(I₀),length(E⁺),length(E⁻),t,
                                 QP ? "true" : "false", sizeQP)
         
-        x, Θₓ, yx = x⁺, Θ⁺, yx⁺
        
         solved = (Θₓ <= tol)
                 
-        niter += 1
     end
     if niter < maxiter
         # Index sets at x

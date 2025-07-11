@@ -53,6 +53,77 @@ this will trigger tests, hopefully successful.
 
 **Example usage**
 
+**A simple example**
+
+Let a LCP be defined by
+```
+M = [0.11  22.5 ;-0.85   2.5]
+q = [-45.6;-2]
+```
+The solver receives a problem produced using the function 
+```
+m = LCPModel(M,q)
+```
+or, if specifying an initial point is desired,
+```
+m = LCPModel(M,q,x₀=x)
+```
+
+The simplest application consists in calling 
+```
+julia> nm_algo(m)
+([3.556701030927834, 2.0092783505154634], Int64[], [1, 2], Int64[], Int64[], 3, 0, 0, 0, 0, 0, 0)
+```
+A more useful call will allow to interpret the result:
+```
+julia> xsol, A₀, I₀, E⁺, E⁻, niter, nbE, nbQP, nbtval, maxE, sQP, mQP  = nm_algo(m);
+
+julia> xsol
+2-element Vector{Float64}:
+ 3.556701030927834
+ 2.0092783505154634
+```
+which yields the solution point.
+
+If an execution trace is desired, the parameter verbose may be specified.
+- verbose = 0    default
+- verbose = 1    prints options summary
+- verbose = 2    prints iterations
+- verbose = 3    prints also line search iterations
+
+For example, verbose = 2 gives
+
+```
+julia> nm_algo(m, verbose = 2);
+Newton min variants algorithm.
+
+ number of variables:             2
+ maximum iterations:              4000
+ direction variant:               hybrid
+ Put indices of E⁺ in I :         false
+ kink help to line search:        first
+ non monotone line search memory: 10
+ eps_active:                      1.0e-9 Float64
+ absolute stopping tolerance:     2.220446049250313e-16 Float64
+
+
+Niter   Θ         |A₀| |I₀|  |E⁺| |E⁻|   stepsize   QP       dimQP
+    0   2.12e+00    2    0    0    0  
+    1   2.06e+00    2    0    0    0    1.5625e-02  false     0
+    2   1.15e-01    1    1    0    0    7.8125e-03  false     0
+    3   0.00e+00    0    2    0    0    1.0000e+00  false     0
+Solved! 
+    3   0.00e+00    0    2    0    0   
+
+
+```
+
+
+
+
+
+**Example from the tests**
+
 Inspect the folder ```test``` to imitate the test scripts to use the HNM solver.
 
 For example, copy any test, say `nm_Test_Fathi.jl` in a fresh folder. Start Julia in this folder.

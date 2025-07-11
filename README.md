@@ -87,7 +87,11 @@ julia> xsol
  3.556701030927835
  2.009278350515464
 ```
-which yields the solution point.
+which yields the solution point. If only the solution point is desired, a shorter call works.
+```
+(xsol, )= nm_algo(m);
+```
+
 
 If an execution trace is desired, the parameter verbose may be specified.
 - verbose = 0    default

@@ -28,6 +28,8 @@ function nm_algo(m :: LCPModel{T};
     q = m.q
     x = m.x₀
 
+    lx = [x]  ##  graph 2D
+
     (verbose >0) && println("Newton min variants algorithm.\n")
     (verbose >0) && println(" number of variables:             ", length(x))
     (verbose >0) && println(" maximum iterations:              ", maxiter)
@@ -110,6 +112,8 @@ function nm_algo(m :: LCPModel{T};
         niter += 1
         x, Θₓ, yx = x⁺, Θ⁺, yx⁺
 
+        push!(lx,x)   ##  graph 2D
+        
         (verbose >2) && @printf("Niter   Θ         |A₀| |I₀|  |E⁺| |E⁻|   stepsize   QP       dimQP\n")  
         (verbose >1) && @printf("%5i  %9.2e  %3i  %3i  %3i  %3i   %11.4e  %s  %4i\n",
                                 niter,Θₓ,length(A₀),length(I₀),length(E⁺),length(E⁻),t,
@@ -133,5 +137,5 @@ function nm_algo(m :: LCPModel{T};
 
     if kQP==0 moyQP =0 else moyQP= kQP/nbQP end
     
-    return x, A₀, I₀, E⁺, E⁻, niter, nbE, nbQP, nbtval, maxE, sQP, moyQP
+    return x, A₀, I₀, E⁺, E⁻, niter, nbE, nbQP, nbtval, maxE, sQP, moyQP, lx
 end

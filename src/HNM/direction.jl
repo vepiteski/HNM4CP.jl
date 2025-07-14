@@ -89,7 +89,7 @@ function direction(m :: LCPModel{T},
                 (verbose==0) || error( " :var Ascent direction")
             end
 
-            Θxd = Θ(m, x+d)
+            Θxd = Θ(x+d, yx + Md)  # save a md  Θxd = Θ(m, x+d)
         elseif variant == :hybrid
             d, Θxd, Θ′d, Md, QP, OK, sQP = nm_hybrid(m, x, yx, τ, Î, A, E⁻, I₀, A₀, E, vI, M_II,
                                                      verbose=verbose>1, τ₀ = τ₀, tol = tol, eps_active = eps_active)

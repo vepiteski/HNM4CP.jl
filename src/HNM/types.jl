@@ -21,8 +21,8 @@ mutable struct LCPModel{T} <: AbstractCPModel{T}
     q :: AbstractVector{T}
 
     x₀ :: AbstractVector{T}
-    nf :: Int
-    ng :: Int
+    nf :: Int  # Counts the number of M*v products, the only O(n²) operation
+    ng :: Int  # Not useful for LCPs since M is constant
 end
 
 function LCPModel( M :: AbstractMatrix{T},

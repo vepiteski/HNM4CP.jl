@@ -28,7 +28,8 @@ function linesearch!(m :: LCPModel{T},
     xp = x + t*d
     nbktr = 0
     nbtval = 0
-    yp = y(m, xp)
+    yp = yx + t*Md
+    #yp = y(m, xp)
     Θp = Θ(xp, yp)
 
     # éviter les calculs impliquant m dans les prints

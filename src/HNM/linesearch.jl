@@ -28,12 +28,14 @@ function linesearch!(m :: LCPModel{T},
     xp = x + t*d
     nbktr = 0
     nbtval = 0
-    verbose && println("     Θ′d = ",Θ′d, " Θ(x) = ",Θ(m,x), " Θ(xp) = ", Θ(m,xp), " Θxd = ", Θxd)
+    yp = y(m, xp)
+    Θp = Θ(xp, yp)
+
+    # éviter les calculs impliquant m dans les prints
+    verbose && println("     Θ′d = ",Θ′d, " Θ(x) = ",Θ(x,yx), " Θ(xp) = ", Θp, " Θxd = ", Θxd)
     verbose && println("     Θ₀ = ", Θ₀, "    Θₓ = ", Θₓ)
     bktrmax = 70; fact = T(big"0.5")   #  for 0.5, 50 is  enough
 
-    yp = y(m, xp)
-    Θp = Θ(xp, yp)
     Θₓ = Θ(x, yx)
 
     # Uncomment for systematic unit stepsize
@@ -44,7 +46,7 @@ function linesearch!(m :: LCPModel{T},
     while  ((Θp - Θ₀) >  Θ′d*t*τ₀) && (nbktr<bktrmax)
         t *= fact
         xp = x + t*d
-        yp = yx + t*Md
+        yp = yx + t*Mdnone
         Θp = Θ(xp, yp)
         
         #verbose && println("         Θ(xp) = ", Θp, "  t = ",t, " Θ0 = ",Θ₀, "Θ′d*t*τ₀ = ",Θ′d*t*τ₀)

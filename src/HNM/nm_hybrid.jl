@@ -63,7 +63,7 @@ function nm_hybrid(m :: LCPModel{T},
         # Compute the directional derivative estimate Θ'(x;d)
         Θ′d2 = dir_der2!(m, Md, d, τ, x, yx, eps_active = eps_active)  # formula 2.19 in the paper
         @assert !isnan(Θ′d2)
-        verbose && println("Directional derivative Θ′d =",Θ′d, " Θ(m,x) = ",Θ(m,x),
+        verbose && println("Directional derivative Θ′d =",Θ′d, " Θ(m,x) = ",Θ(x, yx),
                            " approx Directional derivative Θ′d2 =", Θ′d2)
         
         #if  isempty(E⁻) || ( (Θ′d2 < -0.25*Θ(m, x)) )  # JPD  d ou d2 
@@ -73,7 +73,7 @@ function nm_hybrid(m :: LCPModel{T},
         else    # in last resort, solve the convex quadratic program to compute d
             d, QP, OK, sQP = nm_var(m, x, I, A, E⁻, vI, M_II, verbose=verbose)
             Md = Mtimesv(m, d)
-            Θ′d = dir_der!(Md, d, A₀, I₀, E, x,yx, Fp)
+            Θ′d = dir_der!(Md, d, A₀, I₀, E, x, yx, Fp)
 
             yp = yx + Md   #update avoids a matrix-vector product yp = y(m,xp)
             Θₓₚ = Θ(xp, yp)

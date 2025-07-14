@@ -106,7 +106,7 @@ function nm_algo(m :: LCPModel{T};
             
             nbtval += tval
             yx⁺ = yx + t*Md
-            yx⁺ = y(m,x⁺)
+            #yx⁺ = y(m,x⁺)
         end
 
         niter += 1

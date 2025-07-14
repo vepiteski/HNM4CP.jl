@@ -46,7 +46,7 @@ function linesearch!(m :: LCPModel{T},
     while  ((Θp - Θ₀) >  Θ′d*t*τ₀) && (nbktr<bktrmax)
         t *= fact
         xp = x + t*d
-        yp = yx + t*Mdnone
+        yp = yx + t*Md
         Θp = Θ(xp, yp)
         
         #verbose && println("         Θ(xp) = ", Θp, "  t = ",t, " Θ0 = ",Θ₀, "Θ′d*t*τ₀ = ",Θ′d*t*τ₀)

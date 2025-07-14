@@ -60,8 +60,8 @@ function nm_algo(m :: LCPModel{T};
     yx = y(m, x)
     Θₓ = Θ(x, yx)
 
-    (verbose >1) && @printf("Niter   Θ         |A₀| |I₀|  |E⁺| |E⁻|   stepsize   QP       dimQP\n")  
-    E, I₀, A₀, E⁻,E⁺ = splitsets(m, x, T(τ), yx = yx, eps_active = eps_active)
+    #(verbose >1) && @printf("Niter   Θ         |A₀| |I₀|  |E⁺| |E⁻|   stepsize   QP       dimQP\n")  
+    #E, I₀, A₀, E⁻,E⁺ = splitsets(m, x, T(τ), yx = yx, eps_active = eps_active)
     (verbose >1) && @printf("%5i  %9.2e  %3i  %3i  %3i  %3i  \n",
                                 niter,Θₓ,length(A₀),length(I₀),length(E⁺),length(E⁻))
     # Julia nonsense
@@ -71,6 +71,8 @@ function nm_algo(m :: LCPModel{T};
     Epred, Ipred, Apred = splitsets(m, x, yx = yx)
 
     while ~solved && (niter < maxiter)        
+        (verbose >1) && @printf("%5i  %9.2e  %3i  %3i  %3i  %3i  \n",
+                                niter,Θₓ,length(A₀),length(I₀),length(E⁺),length(E⁻))
 
         d, Θxd, Θ′d, Md, QP, OK, A₀, I₀, E⁺, E⁻, E, sizeQP = direction(m, x, yx,
                                                                        variant = dir,
@@ -115,9 +117,9 @@ function nm_algo(m :: LCPModel{T};
         push!(lx,x)   ##  graph 2D
         
         (verbose >2) && @printf("Niter   Θ         |A₀| |I₀|  |E⁺| |E⁻|   stepsize   QP       dimQP\n")  
-        (verbose >1) && @printf("%5i  %9.2e  %3i  %3i  %3i  %3i   %11.4e  %s  %4i\n",
-                                niter,Θₓ,length(A₀),length(I₀),length(E⁺),length(E⁻),t,
-                                QP ? "true" : "false", sizeQP)
+        #(verbose >1) && @printf("%5i  %9.2e  %3i  %3i  %3i  %3i   %11.4e  %s  %4i\n",
+        #                        niter,Θₓ,length(A₀),length(I₀),length(E⁺),length(E⁻),t,
+        #                        QP ? "true" : "false", sizeQP)
         
        
         solved = (Θₓ <= tol)

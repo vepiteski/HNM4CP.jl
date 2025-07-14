@@ -61,7 +61,7 @@ function nm_algo(m :: LCPModel{T};
     Θₓ = Θ(x, yx)
 
     #(verbose >1) && @printf("Niter   Θ         |A₀| |I₀|  |E⁺| |E⁻|   stepsize   QP       dimQP\n")  
-    #E, I₀, A₀, E⁻,E⁺ = splitsets(m, x, T(τ), yx = yx, eps_active = eps_active)
+    E, I₀, A₀, E⁻,E⁺ = splitsets(m, x, T(τ), yx = yx, eps_active = eps_active)
     (verbose >1) && @printf("%5i  %9.2e  %3i  %3i  %3i  %3i  \n",
                                 niter,Θₓ,length(A₀),length(I₀),length(E⁺),length(E⁻))
     # Julia nonsense

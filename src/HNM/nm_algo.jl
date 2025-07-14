@@ -117,7 +117,7 @@ function nm_algo(m :: LCPModel{T};
         (verbose >2) && @printf("Niter   Θ         |A₀| |I₀|  |E⁺| |E⁻|   stepsize   QP       dimQP\n")  
         (verbose >1) && @printf("%5i  %9.2e  %3i  %3i  %3i  %3i   %11.4e  %s  %4i\n",
                                 niter,Θₓ,length(A₀),length(I₀),length(E⁺),length(E⁻),t,
-                                QP ? "true" : "false", sizeQP)
+                                QP ? "true " : "false", sizeQP)
         
        
         solved = (Θₓ <= tol)

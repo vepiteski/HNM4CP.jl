@@ -66,7 +66,8 @@ function nm_hybrid(m :: LCPModel{T},
         verbose && println("Directional derivative Θ′d =",Θ′d, " Θ(m,x) = ",Θ(m,x),
                            " approx Directional derivative Θ′d2 =", Θ′d2)
         
-        if  isempty(E⁻) || ( (Θ′d2 < -0.25*Θ(m, x)) )  # JPD  d ou d2 
+        #if  isempty(E⁻) || ( (Θ′d2 < -0.25*Θ(m, x)) )  # JPD  d ou d2 
+        if  isempty(E⁻) || ( (Θ′d2 < -0.25*Θ(x, yx)) )  # JPD  d ou d2 
             verbose && println("descent, no QP")
             Verbose && println(" d = ", d)
         else    # in last resort, solve the convex quadratic program to compute d
